@@ -18,7 +18,11 @@ for (const { path, compat } of walk(undefined, bcd)) {
   if (
     chrome?.version_added &&
     !chrome?.partial_implementation &&
+    !chrome?.prefix &&
+    !chrome?.alternative_name &&
     safari?.version_added &&
+    !safari?.prefix &&
+    !safari?.alternative_name &&
     !safari?.partial_implementation &&
     !firefox?.version_added
   ) {
