@@ -17,7 +17,9 @@ for (const { path, compat } of walk(undefined, bcd)) {
 
   if (
     chrome?.version_added &&
+    !chrome?.partial_implementation &&
     safari?.version_added &&
+    !safari?.partial_implementation &&
     !firefox?.version_added
   ) {
     const firefox_bug = firefox?.impl_url;
