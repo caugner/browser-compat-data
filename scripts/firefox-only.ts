@@ -29,6 +29,25 @@ for (const { path, compat } of walk(undefined, bcd)) {
     !firefox?.version_added
   ) {
     const firefox_bug = firefox?.impl_url;
+
+    if (!firefox_bug) {
+      let ignoreChild = false;
+      for (
+        let parentPath = path.split('.');
+        parentPath.length > 0;
+        parentPath = parentPath.slice(0, -1)
+      ) {
+        const parentKey = parentPath.join('.');
+        if (with_bug[parentKey] || without_bug[parentKey]) {
+          ignoreChild = true;
+          break;
+        }
+      }
+      if (ignoreChild) {
+        continue;
+      }
+    }
+
     const target = firefox_bug ? with_bug : without_bug;
     target[path] = {
       chrome: chrome.version_added,
