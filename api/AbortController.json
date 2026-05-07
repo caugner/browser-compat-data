@@ -11,6 +11,9 @@
           "bun": {
             "version_added": "1.0.0"
           },
+          "firefox": {
+            "version_added": "57"
+          },
           "chrome": {
             "version_added": "66"
           },
@@ -20,9 +23,6 @@
           },
           "edge": {
             "version_added": "16"
-          },
-          "firefox": {
-            "version_added": "57"
           },
           "firefox_android": "mirror",
           "nodejs": {
@@ -48,7 +48,7 @@
           "webview_ios": "mirror"
         },
         "status": {
-          "experimental": false,
+          "experimental": true,
           "standard_track": true,
           "deprecated": false
         }
